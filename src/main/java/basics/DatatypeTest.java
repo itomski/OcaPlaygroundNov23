@@ -28,7 +28,24 @@ public class DatatypeTest {
         byte i = 100; // primitiv, lokale Variable
         StringBuilder sb = new /* Moin */ StringBuilder(); // komplex, lokale Variable
 
+        // komplex
         Date heute = new Date();
+
+        // zahlen
+        // standard für Ganzzahlen
+        int ganzzahlen;
+
+        byte kleineGanzhallen; // max 127
+
+        long sehrGrosseZahlen;
+
+        // Dezimalzahlen
+        float kleinDezimalzahlen = 10.0f;
+
+        // standard für DezimalPunktZahlen
+        double grosseDezimalzahlen;
+
+        // byte < short < int < long < float < double
 
     }
 
