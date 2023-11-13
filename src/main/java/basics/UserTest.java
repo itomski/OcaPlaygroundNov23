@@ -6,8 +6,8 @@ public class UserTest {
 
         User u1 = new User(); // Objekt wird instanziert
         //u1.firstname = "Peter";
-        u1.setFirstname("Peter");
-        u1.setLastname("Parker");
+        u1.setFirstname("Bruce");
+        u1.setLastname("Banner");
         //System.out.println(u1.firstname);
         System.out.println(u1.getFirstname() + " " + u1.getLastname());
 
