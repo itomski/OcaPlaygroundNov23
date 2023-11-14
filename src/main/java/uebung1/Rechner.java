@@ -2,8 +2,12 @@ package uebung1;
 
 public class Rechner {
 
+    private Protokoll protokoll = new Protokoll();
+
     public double add(double a, double b) {
-        return a + b;
+        double sum = a + b;
+        protokoll.add(a + " + " + b + " = " + sum);
+        return sum;
     }
 
     public double sub(double a, double b) {
@@ -16,5 +20,9 @@ public class Rechner {
 
     public double multi(double a, double b) {
         return a * b;
+    }
+
+    public void printProtokoll() {
+        System.out.println(protokoll.getText());
     }
 }

@@ -17,6 +17,8 @@ public class RechnerTest {
         erg = rechner.multi(10, 15);
         System.out.println(erg);
 
+        rechner.printProtokoll();
+
         System.out.println();
 
         // Statisch - Kein Objekt nötig
