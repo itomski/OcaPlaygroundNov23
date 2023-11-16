@@ -101,6 +101,8 @@ public class ArrayTest {
         // 1,1,2,2,3,4,6
         // Binärsuche funktioniert nur auf sortierten Mengen
 
+        // Arrays = Utility-Klasse: Hat einen privaten Konstruktor und nur statische Methoden
+
         Arrays.sort(zahlen); // Array wird sortiert
         int erg = Arrays.binarySearch(zahlen, 95);
         System.out.println(Arrays.toString(zahlen));
