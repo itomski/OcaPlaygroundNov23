@@ -1,6 +1,7 @@
 package uebung4;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Product {
 
@@ -46,5 +47,20 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        System.out.println("EQUALS");
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return quantity == product.quantity && Double.compare(product.price, price) == 0 && Objects.equals(name, product.name) && Objects.equals(date, product.date);
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("HASHCODE");
+        return Objects.hash(name, date, quantity, price);
     }
 }
