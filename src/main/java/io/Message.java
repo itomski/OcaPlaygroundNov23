@@ -16,6 +16,9 @@ public class Message implements Serializable {
 
     private boolean active;
 
+    public Message() {
+    }
+
     public Message(LocalDateTime createdAt, String text, boolean active) {
         this.createdAt = createdAt;
         this.text = text;
