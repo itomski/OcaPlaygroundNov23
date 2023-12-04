@@ -12,5 +12,8 @@ public class Aufgabe {
 
         // Schreibe 2 eigene FunctionalInterfaces und
         // jeweils 2 Lambdas pro Interface
+
+        // e(fx)clipse
+
     }
 }
