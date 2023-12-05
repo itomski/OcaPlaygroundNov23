@@ -99,7 +99,7 @@ public class MessageRepository {
             PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, message.getContent());
             stmt.setInt(2, message.getId());
-            return stmt.executeUpdate(sql) > 0;
+            return stmt.executeUpdate() > 0;
         }
     }
 
@@ -113,6 +113,8 @@ public class MessageRepository {
         try(Connection conn = DBUtils.getConnection();
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
+            // stmt.getResultSet() // Für Abfragen (SELECT) von Daten
+            // stmt.getUpdateCount() // Für andere Anweisungen (INSERT, UPDATE, DELETE etc.)
         }
     }
 
