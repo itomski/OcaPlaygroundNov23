@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtils {
 
-    private static final String URL = "jdbc:sqlite:" + System.getProperty("user.home")  + "/test.db";
+    private static final String URL = "jdbc:sqlite:" + System.getProperty("user.home")  + "/data.db";
 
     private DBUtils() {
     }
