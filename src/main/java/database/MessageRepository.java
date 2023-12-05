@@ -1,9 +1,6 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,20 +72,33 @@ public class MessageRepository {
 
     private boolean insert(Message message) throws SQLException {
 
+        /*
         final String sql = "INSERT INTO " + TABLE + " (id, content) VALUES(NULL, '" + message.getContent() + "')";
 
         try(Connection conn = DBUtils.getConnection();
                 Statement stmt = conn.createStatement()) {
             return stmt.executeUpdate(sql) > 0;
         }
+        */
+
+        // Schutz gegen SQL-Injection
+        final String sql = "INSERT INTO " + TABLE + " (id, content) VALUES(NULL, ?)";
+
+        try(Connection conn = DBUtils.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, message.getContent());
+            return stmt.executeUpdate() > 0;
+        }
     }
 
     private boolean update(Message message) throws SQLException {
 
-        final String sql = "UPDATE " + TABLE + " SET content = '" + message.getContent() + "' WHERE id = " + message.getId();
+        final String sql = "UPDATE " + TABLE + " SET content = ? WHERE id = ?";
 
         try(Connection conn = DBUtils.getConnection();
-            Statement stmt = conn.createStatement()) {
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, message.getContent());
+            stmt.setInt(2, message.getId());
             return stmt.executeUpdate(sql) > 0;
         }
     }

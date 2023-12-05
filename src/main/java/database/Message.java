@@ -1,5 +1,6 @@
 package database;
 
+// ValueObject
 public class Message {
 
     private int id;
