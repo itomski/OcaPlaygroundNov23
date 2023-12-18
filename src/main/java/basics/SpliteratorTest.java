@@ -41,6 +41,5 @@ public class SpliteratorTest {
 
         //Spliterator<String> names = namen.spliterator();
         //names.forEachRemaining(n -> System.out.println(n));
-        
     }
 }
