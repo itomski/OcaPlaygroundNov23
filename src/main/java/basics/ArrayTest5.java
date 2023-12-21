@@ -1,5 +1,6 @@
 package basics;
 
+import java.time.Period;
 import java.util.Arrays;
 
 public class ArrayTest5 {
@@ -67,5 +68,22 @@ public class ArrayTest5 {
         System.out.println(10.0 / 0);
 
         // int _ = 10; // _ kann in Java 8 und davor verwendet werden. Danach ist es ein Schlüsselwort
+
+        Period p = Period.of(10, 15, 100);
+        System.out.println(p);
+        System.out.println(p.normalized());
+
+        int i = 0;
+        if(arr.length > 0) {
+            i = 1;
+        }
+        else {
+            i = 0;
+        }
+
+        int j = (arr.length > 0) ? 1 : 0;
+        System.out.println(j);
+
+        System.out.println((arr.length > 0) ? 1 : 0);
     }
 }
